@@ -1,0 +1,18 @@
+name: RAG
+channels:
+  - pytorch
+  - nvidia
+  - huggingface
+  - conda-forge
+dependencies:
+  - python==3.10
+  - pytorch-cuda
+  - pytorch
+  - tqdm
+  - click
+  - langchain
+  - langchain-community
+  - langchain-openai
+  - pip:
+      - pymupdf
+      - langchain-chroma
