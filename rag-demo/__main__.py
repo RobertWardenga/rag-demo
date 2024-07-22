@@ -1,4 +1,5 @@
 import click
+from typing import List
 
 from data_store import get_datastore
 from retrieval import get_retriever
@@ -20,8 +21,11 @@ def rag_demo():
 	while True:
 		question = click.prompt('>', type=str)
 		click.echo(question)
+		chunks: List = []
 		for chunk in chain.stream(question):  # "Wofür kann XBO 1000 W/HSC OFR genutzt werden?"
 			print(chunk, end="", flush=True)
+			chunks.append(chunk)
+
 
 
 if __name__ == "__main__":
